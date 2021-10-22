@@ -17,6 +17,7 @@
   <ItemGroup>
     <Folder Include="DTOs\" />
     <Folder Include="FrontEnd\" />
+    <Folder Include="Teoria\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,32 @@
+Entity Framework serve per gestire l'ORM(il linguaggio SQL per intenderci) attraverso la libreria LINQ
+in effetti va a sostituire il nuget MySql presente nel precedente progetto Utility 
+
+
+Entity Framework:
+1) Installare il pacchetto di riferimento per 
+	Entity Framework del Database da utilizzare.
+	MySQL => Pomelo...EntityFramework
+2) Definire il modello che rappresenta la "tabella"
+	da persistere
+3) Creare una classe che estende DbContext
+	Passando al costruttore base le opzioni
+	del Db (DbContextOptions)
+4) Nello startup dell'app, definire la configurazione di
+	EF: services.AddDbContext<DataContext>(opt => ...)
+5) A meno che non stiate utilizzando un Database in memoria
+	Bisogna definire una migration
+
+eseguire comandi nel Terminale PowerShell di VS 2019:
+
+5a) Installare Nuget EntityFramework Design
+5b) Assicurarsi che sia installato sul pc il tool di entity
+	framework. (dotnet tool install --global dotnet-ef)
+5c) Definire una prima migration: dotnet ef migrations add NomeMigration
+5d) Mandare in esecuzione la migration: dotnet ef database update
+
+
+6) Ogni volta che si effettuano delle modifiche ai modelli, ricordarsi di aggiornare
+	la migrazione e di conseguenza mandare l'update al DB, OPPURE per creare una nuova migrazione
+eliminare l'intera cartella creata automaticamente. (5c-5d)
+
+
