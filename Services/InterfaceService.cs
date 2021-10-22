@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Lavoro.Services
 {
+    //L'interfaccia<Tipo Generico> sarà il cotratto che sarà stipulato per ciascun Service 
     public interface InterfaceService<T>
     {
         public List<T> Elenco();

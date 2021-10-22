@@ -39,6 +39,21 @@ namespace Lavoro.Services
 
         }
 
+        public List<Dipendente> CercaPerCognome(string cognome)
+        {
+            var elementiTrovati = _db.Dipendenti.Where(dip => dip.Cognome == cognome).ToList();
+
+            if(elementiTrovati is null)
+            {
+                throw new Exception($"Dipendenti di Cognome '{cognome}' non trovati");
+            }
+
+            return elementiTrovati;
+        }
+
+
+
+
         public Dipendente Rimuovi(int id)
         {
            

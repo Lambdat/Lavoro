@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Lavoro.Services
 {
+    //Implementiamo l'interfaccia specificando il tipo del Generic
     public class RepartoService : InterfaceService<Reparto>
     {
         private readonly DataContext _db;
@@ -40,6 +41,10 @@ namespace Lavoro.Services
 
 
         }
+
+        
+
+
 
         public List<Reparto> Elenco()
         {

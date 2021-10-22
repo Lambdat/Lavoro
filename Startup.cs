@@ -33,6 +33,8 @@ namespace Lavoro
 
             services.AddControllers();
 
+            //Seguendo il pattern Dependency Injection aggiungiamo le istanze(Cors,DbContext,Singleton o Scoped) che ci servono direttamente da qui
+
             //Aggiungiamo i Cors affinché lato front-end possano essere ricevuti/inoltrati i dati per le chiamate HTTP
             services.AddCors();
 
@@ -73,10 +75,23 @@ namespace Lavoro
 
             app.UseAuthorization();
 
-            //CORS ==> do il consenso all'applicazione di fare chiamate REST (GET, POST..) per prendere i dati dal server
+            //Con UseCors il consenso all'applicazione(lato FrontEnd) di fare chiamate HTTP REST (GET, POST..) per prendere i dati dal server
             app.UseCors(option => option.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-                
 
+            //Per Creare la Migrazione, ossia per implementre la parte EntityFramework (MySQL) eseguire i seguenti comandi
+            //nella PowerShell(terminale in basso) di questo progetto:
+
+            /*
+             * 1) dotnet tool install --global dotnet-ef (installiamo a livello globale lo strumento di dotnet-ef)
+             * 
+             * 
+	         * 2) dotnet-ef migrations add Inizio (Aggiungiamo la Migrazione, verranno creati file .cs in un apposita cartella,)
+	         *                                    (In caso di nuova migrazione eliminare la cartella relativa e tutti i suoi file interni)
+	         *                                    
+	         * 3) dotnet-ef database update (Creazione del database, delle relative Tabelle "DbSets" e delle relazioni gestite)
+             * 
+             * 
+             * */
 
 
 

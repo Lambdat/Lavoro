@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lavoro.Services
 {
+    //Implementiamo l'interfaccia specificando il tipo del Generic
     public class DirigenteService : InterfaceService<Dirigente>
     {
         //Creiamo un campo private di tipo DataContext 
