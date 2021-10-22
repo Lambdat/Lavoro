@@ -1,4 +1,6 @@
 using Lavoro.Data;
+using Lavoro.Models;
+using Lavoro.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,6 +41,14 @@ namespace Lavoro
 
             //Aggiungiamo il DBContext<DataContext>
             services.AddDbContext<DataContext>(opt => opt.UseMySQL(parametri));
+
+            //Aggiungiamo le nostre istanze Scoped, le quali fungono come le Singleton ma per più richieste
+            services.AddScoped<InterfaceService<Dipendente>, DipendenteService>();
+
+            services.AddScoped<InterfaceService<Dirigente>, DirigenteService>();
+
+            services.AddScoped<InterfaceService<Reparto>, RepartoService>();
+
 
             services.AddSwaggerGen(c =>
             {
