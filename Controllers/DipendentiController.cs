@@ -11,12 +11,12 @@ namespace Lavoro.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class DipendenteController : ControllerBase
+    public class DipendentiController : ControllerBase
     {
 
         private readonly InterfaceService<Dipendente> _iService;
 
-        public DipendenteController(InterfaceService<Dipendente> iService)
+        public DipendentiController(InterfaceService<Dipendente> iService)
         {
             _iService = iService;
         }

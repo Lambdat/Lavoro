@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lavoro.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211022104841_Inizio")]
+    [Migration("20211022130408_Inizio")]
     partial class Inizio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
